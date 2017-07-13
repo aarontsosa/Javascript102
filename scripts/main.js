@@ -106,7 +106,7 @@
 // return end;
 // }
 
-///////////tic-tac-toe///////////NOT FINISHED!!!!
+///////////tic-tac-toe///////////
 function ticTacToe(G){
     var winner = 0
     var winCond = {
@@ -153,7 +153,7 @@ function ticTacToe(G){
     return winner
 }
 
-//////////Tic Tac Toe////////////
+//////////Rock Paper Scissors////////////
 // function rockPaperScissors(player1, player2){
 //     var results = 0
 //     var rules = {
