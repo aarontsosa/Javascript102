@@ -106,22 +106,68 @@
 // return end;
 // }
 
-///////////tic-tac-toe///////////
+///////////tic-tac-toe///////////NOT FINISHED!!!!
 function ticTacToe(G){
     var winner = 0
     var winCond = {
-        "X,X,X": 'X',
-        "O,O,O": 'O',
+        "XXX": 'X',
+        "OOO": 'O',
     }
-     for(i=0; i < G.length; i++){
-         var row = 0
-        row = G[i].toString();
-        if(row in winCond){
-           winner = winCond[row]
-           break
-        } else {
-            winner = null;
+    fwdslash = ""
+    bkslash = ""
+    var y = 0;
+    for(i=0; i < G.length; i++){
+        var row = ""
+        for(j=0; j < G.length; j++){
+            row += G[i][j]
         }
-     }
+        if(row in winCond){
+            winner = winCond[row]
+        }
+    }
+    for(k=0; k < G.length; k++){
+        var column = ""
+        for(l=0; l < G.length; l++){
+            column += G[l][k]
+        }
+        if(column in winCond){
+            winner = winCond[column]
+        }
+    }
+    for(a=0; a < G.length; a++){
+        fwdslash += G[a][a]
+    }
+    if(fwdslash in winCond){
+        winner = winCond[fwdslash]
+    }
+    for(x=2; x >= 0; x--){
+        bkslash += G[x][y];
+        y += 1
+        if(bkslash in winCond){
+            winner = winCond[bkslash]
+        } 
+    }
+    if (winner === 0){
+        winner = null;
+    }
     return winner
 }
+
+//////////Tic Tac Toe////////////
+// function rockPaperScissors(player1, player2){
+//     var results = 0
+//     var rules = {
+//         'rock': 1,
+//         'paper': 2,
+//         'scissors': 3,
+//     }
+//     var winner = rules[player1] - rules[player2]
+//     if ((winner === 1) || (winner === -2)){
+//         results = "Player 1 Wins"
+//     } else if ((winner === -1) || (winner === 2)) {
+//         results = "Player 2 Wins"
+//     } else {
+//         results = "Draw"
+//     }
+//     return results
+// }
